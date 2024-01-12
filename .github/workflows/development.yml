@@ -1,0 +1,19 @@
+name: Test Deploy
+
+on:
+  push:
+    branches: [ "development" ]
+
+jobs:
+  development:
+    runs-on: ubuntu-latest
+    environment: development
+    strategy:
+      matrix:
+        node-version: [19.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Echo
+      run: |
+        echo "Running a job in the development environment"

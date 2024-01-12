@@ -1,0 +1,19 @@
+name: Test Deploy
+
+on:
+  push:
+    branches: [ "pre-production" ]
+
+jobs:
+  pre-production:
+    runs-on: ubuntu-latest
+    environment: pre-production
+    strategy:
+      matrix:
+        node-version: [19.x]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Echo
+      run: |
+        echo "Running a job in the pre-production environment"
