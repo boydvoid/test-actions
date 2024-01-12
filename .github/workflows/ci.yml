@@ -28,20 +28,20 @@ jobs:
         folder: build
   
   pre-production:
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment: pre-production
     strategy:
       matrix:
         node-version: [19.x]
 
-    steps:
-    - uses: actions/checkout@v3
-    - name: Echo
-      run: |
-        echo "Running a job in the pre-production environment"
+  steps:
+  - uses: actions/checkout@v3
+  - name: Echo
+    run: |
+      echo "Running a job in the pre-production environment"
 
   development:
-   runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     environment: development
     strategy:
       matrix:
